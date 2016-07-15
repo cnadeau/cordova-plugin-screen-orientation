@@ -110,6 +110,7 @@
 
 - (UIInterfaceOrientationMask) supportedInterfaceOrientations
 {
+    [NSThread sleepForTimeInterval:0.050f];
     if ([self.calledWith rangeOfString:@"portrait"].location != NSNotFound) {
         return UIInterfaceOrientationMaskPortrait;
     } else if([self.calledWith rangeOfString:@"landscape"].location != NSNotFound) {
