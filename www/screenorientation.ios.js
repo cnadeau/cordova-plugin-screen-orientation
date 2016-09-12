@@ -44,7 +44,11 @@ screenOrientation.setOrientation = function(orientation) {
         }
     };
 
-    exec(success, null, "YoikScreenOrientation", "screenOrientation", ['set', orientation]);
+    var error = function(err){
+        console.error(JSON.stringify(err));
+    }
+
+    exec(success, error, "YoikScreenOrientation", "screenOrientation", ['set', orientation]);
 };
 
 module.exports = screenOrientation;
